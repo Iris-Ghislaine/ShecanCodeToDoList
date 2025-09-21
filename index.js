@@ -14,7 +14,7 @@ function renderTasks() {
     li.innerHTML = `<div class="flex items-center gap-2">
           <input type="checkbox" ${
             task.completed ? "checked" : ""
-          } class="h-4 w-4 text-blue-500" />
+          } class="h-4 w-4 text-blue-500" onchange="toggleTask(${index})" />
           <span>${task.text}</span>
           </div>
         <button class="text-red-500 hover:text-red-600 text-sm">Delete</button>`;
@@ -30,6 +30,11 @@ function addTask() {
     taskInput.value = "";
     renderTasks();
   }
+}
+
+function toggleTask(index) {
+  tasks[index].completed = !tasks[index].completed;
+  renderTasks();
 }
 
 addTaskBtn.addEventListener("click", addTask);
