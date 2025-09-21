@@ -4,21 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="min-h-screen bg-gray-50">
     <main class="container mx-auto p-4 max-w-lg">
       <h1 class="text-2xl font-semibold text-gray-800 mb-4">To Do List</h1>
-      <div class="flex gap-2 mb-4">
+      <div class="flex flex-col sm:flex-row gap-2 mb-4">
         <input
           type="text"
           id="task-input"
           class="flex-1 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
           placeholder="Add a task..."
         />
+        <!-- category dropdown -->
+        <select
+          id="task-category"
+          class="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="School">School</option>
+        </select>
+        <!-- priority dropdown -->
+        <select
+          id="task-priority"
+          class="p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option value="High">High</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="Low">Low</option>
+        </select>
         <button
-        id="add-task"
+          id="add-task"
           class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Add
@@ -26,9 +43,8 @@
       </div>
     </main>
     <ul class="space-y-2" id="task-list">
-        reserve space for lists
+      reserve space for lists
     </ul>
   </body>
   <script src="index.js"></script>
-</html> 
-
+</html>
